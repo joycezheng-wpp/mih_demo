@@ -263,7 +263,9 @@ table.tbl { width: 100%; border-collapse: separate; border-spacing: 0; font-size
 .filter-bar + .subtabs { margin-top: -8px; }
 .subtabs.mini { margin: 0; padding: 3px; }
 .subtabs.mini button { padding: 5px 10px; font-size: 12px; }
-.def { flex: 1 1 320px; font-size: 13px; color: var(--ink-2); background: var(--surface-2); border-radius: var(--radius-sm); padding: 8px 12px; align-self: stretch; }
+/* KPI definition: always its own full-width row under the filters */
+.filter-context.has-def { flex: 1 1 100%; margin-left: 0; align-self: auto; }
+.def { font-size: 13px; color: var(--ink-2); background: var(--surface-2); border-radius: var(--radius-sm); padding: 8px 12px; }
 .def b { display: block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
 .def .tgt { display: inline-block; margin-top: 4px; font-weight: 700; color: var(--ink); background: rgba(176,244,103,.5); border-radius: 6px; padding: 1px 6px; }
 .note { font-size: 13px; color: var(--ink-2); background: var(--surface); border: 1px dashed var(--line-strong); border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; }

@@ -73,7 +73,7 @@
           <select id="f-${d.key}" data-filter="${d.key}">${d.options.map(o =>
             `<option value="${o.value}" ${String(state[d.key]) === String(o.value) ? 'selected' : ''}>${esc(o.label)}</option>`).join('')}</select></div>`).join('')}
         <button class="reset-link" data-filter-reset>Reset</button>
-        ${context ? `<div class="filter-context">${context}</div>` : ''}
+        ${context ? `<div class="filter-context ${context.includes('class="def"') ? 'has-def' : ''}">${context}</div>` : ''}
       </div>${extra}`;
     },
 
