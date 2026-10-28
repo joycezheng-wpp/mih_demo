@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marketing Intelligence Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="brand" href="#/" aria-label="Marketing Intelligence Hub home">
+      <img src="assets/wppmedia-logo-navy.svg" alt="WPP Media">
+      <span class="divider"></span>
+      <span class="product">Marketing Intelligence Hub</span>
+    </a>
+    <nav class="main-nav" aria-label="Modules"></nav>
+    <div class="header-right">
+      <span class="demo-badge" title="All figures are synthetic and for demonstration only">Demo · illustrative data</span>
+      <div class="persona-select"><label for="persona">Client</label><select id="persona" aria-label="Demo client persona"></select></div>
+    </div>
+  </header>
+
+  <main id="page" class="page"></main>
+
+  <button id="ai-fab" class="btn btn-navy ai-fab" aria-label="Open AI Assistant">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B0F467" stroke-width="2.2" stroke-linecap="round"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9.5 13h.01M14.5 13h.01"/></svg>
+    AI Assistant
+  </button>
+  <section id="ai-panel" class="ai-panel" role="dialog" aria-label="AI Assistant">
+    <div class="ai-head">
+      <div class="ai-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000050" stroke-width="2.2" stroke-linecap="round"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9.5 13h.01M14.5 13h.01"/></svg></div>
+      <div><b>AI Assistant</b><small>Answers from the hub's data</small></div>
+      <button data-close aria-label="Close assistant">×</button>
+    </div>
+    <div class="ai-log" aria-live="polite"></div>
+    <div class="ai-suggest"></div>
+    <form class="ai-input"><input type="text" placeholder="Ask about spend, share of spend, adherence…" aria-label="Ask the AI Assistant"><button class="btn btn-lime" type="submit">Ask</button></form>
+  </section>
+
+  <script src="assets/vendor/echarts.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/ui.js"></script>
+  <script>window.MIH.modules = {};</script>
+  <script src="js/modules/home.js"></script>
+  <script src="js/modules/exec.js"></script>
+  <script src="js/modules/media.js"></script>
+  <script src="js/modules/competitive.js"></script>
+  <script src="js/modules/creative.js"></script>
+  <script src="js/assistant.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
