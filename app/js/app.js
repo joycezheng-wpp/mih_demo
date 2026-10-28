@@ -46,7 +46,7 @@
     document.querySelector('.main-nav').innerHTML = Object.entries(ROUTES).map(([k, v]) =>
       `<a href="#/${k === 'home' ? '' : k}" data-route="${k}">${v}</a>`).join('');
     const sel = document.getElementById('persona');
-    sel.innerHTML = Object.values(M.PERSONAS).map(p => `<option value="${p.id}">${p.label} · ${p.client}</option>`).join('');
+    sel.innerHTML = Object.values(M.PERSONAS).map(p => `<option value="${p.id}" title="${p.label}">${p.client}</option>`).join('');
     M.setPersona(store.get('mih-persona') || M.DEFAULT_PERSONA);
     sel.value = M.state.persona;
     sel.addEventListener('change', () => { M.setPersona(sel.value); M.assistant.reset(); render(); });

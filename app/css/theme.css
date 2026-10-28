@@ -61,14 +61,14 @@ button, select, input { font-family: inherit; }
 /* ---------- Header ---------- */
 .app-header {
   position: sticky; top: 0; z-index: 50; background: var(--surface);
-  border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 24px;
-  padding: 0 28px; height: 64px;
+  border-bottom: 1px solid var(--line); display: flex; align-items: center; column-gap: 24px;
+  padding: 0 28px; min-height: 64px; flex-wrap: wrap;   /* nav keeps its row; extras wrap below if space runs out */
 }
 .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--ink); flex-shrink: 0; }
 .brand img { height: 20px; display: block; }
 .brand .divider { width: 1px; height: 26px; background: var(--line-strong); }
 .brand .product { font-weight: 700; font-size: 15px; letter-spacing: -.01em; white-space: nowrap; }
-.main-nav { display: flex; gap: 4px; height: 100%; overflow-x: auto; scrollbar-width: none; }
+.main-nav { display: flex; gap: 4px; height: 64px; overflow-x: auto; scrollbar-width: none; }
 .main-nav a {
   display: flex; align-items: center; padding: 0 14px; text-decoration: none; color: var(--ink-2);
   font-weight: 600; font-size: 14px; position: relative; white-space: nowrap;
@@ -79,13 +79,13 @@ button, select, input { font-family: inherit; }
   content: ''; position: absolute; left: 10px; right: 10px; bottom: 0; height: 4px;
   border-radius: 4px 4px 0 0; background: var(--wpp-lime);
 }
-.header-right { margin-left: auto; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.header-right { margin-left: auto; display: flex; align-items: center; gap: 12px; flex-shrink: 0; padding: 8px 0; }
 .demo-badge {
   font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
   background: var(--wpp-yellow); color: var(--ink); padding: 4px 10px; border-radius: 999px; white-space: nowrap;
 }
 .persona-select { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
-.persona-select select { border: 1px solid var(--line-strong); border-radius: 8px; padding: 6px 8px; color: var(--ink); background: var(--surface); font-weight: 600; }
+.persona-select select { border: 1px solid var(--line-strong); border-radius: 8px; padding: 6px 8px; color: var(--ink); background: var(--surface); font-weight: 600; max-width: 220px; }
 .btn {
   display: inline-flex; align-items: center; gap: 8px; border: 0; cursor: pointer;
   border-radius: 999px; padding: 9px 16px; font-weight: 700; font-size: 13px; text-decoration: none;
@@ -351,9 +351,6 @@ details p { margin: 6px 0 0; color: var(--ink-2); font-size: 13px; }
   .main-nav a { padding: 0 10px; }
   .persona-select label { display: none; }
 }
-@media (max-width: 1200px) {
-  .demo-badge { display: none; }
-}
 @media (max-width: 1280px) {
   .modules { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .span-2 { grid-column: span 4; }
@@ -366,7 +363,7 @@ details p { margin: 6px 0 0; color: var(--ink-2); font-size: 13px; }
 @media (max-width: 720px) {
   .page { padding: 16px; }
   .app-header { padding: 0 16px; gap: 12px; }
-  .persona-select label, .demo-badge { display: none; }
+  .persona-select label { display: none; }
   .span-2 { grid-column: span 6; }
   .modules { grid-template-columns: 1fr; }
   .hero h1 { font-size: 32px; }
